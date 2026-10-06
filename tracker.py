@@ -20,15 +20,26 @@ exp1_amount = float(input("Amount? "))
 exp2_name = input("Second expense? ")
 exp2_amount = float(input("Amount? "))
 
-total_spent = exp1_amount + exp2_amount
-average = total_spent / 2
+tax_rate = float(input("Tax rate %? "))
+budget = float(input("Your budget? "))
+
+subtotal = exp1_amount + exp2_amount
+average = subtotal / 2
+tax_amount = subtotal * (tax_rate / 100)
+grand_total = subtotal + tax_amount
+over_budget = grand_total > budget
+left_in_budget = budget - grand_total
 
 print()
 print("-" * 40)
 print("SUMMARY")
 print(f"- {exp1_name}:    ${exp1_amount}")
 print(f"- {exp2_name}:     ${exp2_amount}")
-print(f"Total spent: ${total_spent}")
+print(f"Subtotal:    ${subtotal}")
 print(f"Average:     ${average}")
+print(f"Tax ({tax_rate}%):    ${tax_amount}")
+print(f"Grand total: ${grand_total}")
+print(f"Over budget? {over_budget}")
+print(f"Left in budget: ${left_in_budget}")
 print("-" * 40)
-print("Made by: Juan Dela Cruz  |  Installment 2")
+print("Made by: Rovieck Anthony Ramos  |  Installment 3")
